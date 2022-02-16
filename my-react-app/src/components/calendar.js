@@ -1,19 +1,21 @@
-import React, { Component } from 'react'
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from '@fullcalendar/interaction'
+import React from "react";
+// import "./styles.css";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
 
-export default class Schedule extends Component {
-  // declare any necessary functions such as handleDateClick, etc.
+// import "@fullcalendar/core/main.css";
+// import "@fullcalendar/daygrid/main.css";
 
-  render() {
-    return <FullCalendar 
-                    defaultView="dayGridMonth" 
-                    plugins={[dayGridPlugin, interactionPlugin]}
-                    editable={true}
-                    eventDrop={this.handleEventDrop}
-                    eventClick={this.handleEventClick}
-                    events={this.formatEvents()}
-                />
-  }
+export default function  Cal() {
+  const events = [{ title: "today's event", date: new Date() }];
+
+  return (
+    <div className="Cal">
+      <FullCalendar
+        defaultView="dayGridMonth"
+        plugins={[dayGridPlugin]}
+        events={events}
+      />
+    </div>
+  );
 }

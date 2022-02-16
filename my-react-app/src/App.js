@@ -1,4 +1,5 @@
 import React from 'react';
+import Cal from './components/calendar';
 
 function App() {
   return (
@@ -7,8 +8,8 @@ function App() {
       <form>
         <input type="text" placeholder="Insert ID number"></input>
         <button>Search</button>
-        {/* <button>Edit</button> */}
       </form>
+      <Cal/>
     </div>
   )
 }
