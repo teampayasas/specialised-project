@@ -1,18 +1,16 @@
 import React from 'react';
-import Navbar from './Navbar';
+
 function App() {
   return (
-    // can only return one thing
-    // <div className="App"></div>
-    <>
-      <Navbar />
-      <a href="#">Home</a>
-      <a href="#">Booking</a>
-      <a href="#">Contact</a>
-    </>
-  );
+    <div className="wrapper">
+      <h1>Manually Change Bookings</h1>
+      <form>
+        <input type="text" placeholder="Insert ID number"></input>
+        <button>Search</button>
+        {/* <button>Edit</button> */}
+      </form>
+    </div>
+  )
 }
 
 export default App;
-
-// href="https://reactjs.org"
