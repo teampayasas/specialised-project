@@ -1,13 +1,30 @@
 import {useEffect} from 'react'
 import alanBtn from '@alan-ai/alan-sdk-web';
+
+const COMMANDS = {
+  NEXT_WEEK: 'next week'
+}
+
+
+
+
+
+
 export default function useAlan() {
+function changeWeek (){
+  alanBtn.playText('changing')
+}
+
     useEffect(() => {
         alanBtn({
-            key: 'e98b154fd089d01807425dd7b3d167e72e956eca572e1d8b807a3e2338fdd0dc/stage',
+            key:  
+              process.env.REACT_APP_ALAN_KEY,
             onCommand: (commandData) => {
-              if (commandData.command === 'go:back') {
-                // Call the client code that will react to the received command
+              if(commandData.comand === COMMANDS.NEXT_WEEK)
+              {
+                changeWeek()
               }
+              console.log(commandData)
             }
         });
       }, []);
